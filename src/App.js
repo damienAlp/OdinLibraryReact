@@ -49,6 +49,7 @@ function App() {
               <span style={{ color: 'red' }}>Not Read</span>
             )}
           </h5>
+          <button onClick={() => removeBook(id)}>Remove</button>
         </div>
       )
     }
@@ -83,6 +84,11 @@ function App() {
   }
 
   // ADD BOOK END
+
+  // REMOVE BOOK
+  const removeBook = (id) => {
+    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== id))
+  }
 
   // TOGGLE ISREAD
   const toggleIsRead = (id) => {
